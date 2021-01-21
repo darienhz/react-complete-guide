@@ -7,4 +7,4 @@ const person = () => {
 
 
 
-export default Person
+export default person
