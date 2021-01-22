@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import Person from './Person/Person'
+import Person from './Person/Person';
+
 
 
 
@@ -38,11 +39,20 @@ class App extends Component {
  }
 
   render() {
+
+    const buttonStyle = {
+      backgroundColor: 'lightgreen',
+      font: 'inherit',
+      border: '2px solid lightblue',
+      padding: '8px',
+      color: 'white',
+    }
+
     return (
       <div className="App">
         <h1>Hi I'm a React App</h1>
         <p>Learning to code with React</p>
-        <button onClick={this.switchNamedHandler.bind(this, 'Darien!!')}>Switch Name</button>
+        <button style={buttonStyle} onClick={this.switchNamedHandler.bind(this, 'Darien!!')}>Switch Name</button>
         <Person name={this.state.persons[0].name}
           age={this.state.persons[0].age}> My hobbies: Video games</Person>
         <Person
