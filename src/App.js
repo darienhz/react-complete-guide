@@ -13,7 +13,8 @@ class App extends Component {
       { name: 'Justin', age: 31 },
       { name: 'Joey', age: 32 },
     ],
-    otherState: 'Something else!'
+    otherState: 'Something else!',
+    showPersons: false
   }
 
   switchNamedHandler = (newName) => {
@@ -38,6 +39,10 @@ class App extends Component {
    })
  }
 
+  togglePersonHandler = () => {
+
+  }
+
   render() {
 
     const buttonStyle = {
@@ -46,6 +51,7 @@ class App extends Component {
       border: '2px solid lightblue',
       padding: '8px',
       color: 'white',
+      cursor: 'pointer'
     }
 
 
@@ -53,7 +59,9 @@ class App extends Component {
       <div className="App">
         <h1>Hi I'm a React App</h1>
         <p>Learning to code with React</p>
-        <button style={buttonStyle} onClick={this.switchNamedHandler.bind(this, 'Darien!!')}>Switch Name</button>
+        <button style={buttonStyle}
+         onClick={this.togglePersonHandler.bind(this, 'Darien!!')}>Switch Name</button>
+        <div>
         <Person name={this.state.persons[0].name}
           age={this.state.persons[0].age}> My hobbies: Video games</Person>
         <Person
@@ -64,6 +72,7 @@ class App extends Component {
         <Person
           name={this.state.persons[2].name}
           age={this.state.persons[2].age}/>
+        </div>
       </div>
     );
   }
