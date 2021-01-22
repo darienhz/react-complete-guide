@@ -48,6 +48,7 @@ class App extends Component {
       color: 'white',
     }
 
+
     return (
       <div className="App">
         <h1>Hi I'm a React App</h1>
