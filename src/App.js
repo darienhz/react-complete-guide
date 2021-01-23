@@ -9,9 +9,9 @@ import Person from './Person/Person';
 class App extends Component {
   state = {
     persons: [
-      { name: 'Darien', age: 31 },
-      { name: 'Justin', age: 31 },
-      { name: 'Joey', age: 32 },
+      { id: 'sfs', name: 'Darien', age: 31 },
+      { id: 'fd', name: 'Justin', age: 31 },
+      { id: 'ds', name: 'Joey', age: 32 },
     ],
     otherState: 'Something else!',
     showPersons: false
@@ -40,9 +40,9 @@ class App extends Component {
  }
 
   deletePersonHandler = (personIndex) => {
-    const persons = this.state.persons;
+    const persons = [...this.state.persons];
     persons.splice(personIndex, 1);
-    this.setState({persons :persons})
+    this.setState({persons :persons});
   }
 
   togglePersonHandler = () => {
@@ -70,7 +70,8 @@ class App extends Component {
               return <Person
                 click={() => this.deletePersonHandler(index)}
                 name={person.name}
-                age={person.age}/>
+                age={person.age}
+                key={person.id}/>
             })}
 
           </div>
@@ -91,3 +92,13 @@ class App extends Component {
 
 export default App;
 
+/* <Person name={this.state.persons[0].name}
+age={this.state.persons[0].age}> My hobbies: Video games</Person>
+<Person
+name={this.state.persons[1].name}
+age={this.state.persons[1].age}
+click={this.switchNamedHandler.bind(this, 'Darien Hernandez')}
+changed={this.nameChangedHandler}/>
+<Person
+name={this.state.persons[2].name}
+age={this.state.persons[2].age}/> */
