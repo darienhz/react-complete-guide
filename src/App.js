@@ -40,7 +40,8 @@ class App extends Component {
  }
 
   togglePersonHandler = () => {
-
+    const doesShow = this.state.showPersons;
+    this.setState({showPersons: !doesShow});
   }
 
   render() {
@@ -61,19 +62,22 @@ class App extends Component {
         <p>Learning to code with React</p>
         <button style={buttonStyle}
          onClick={this.togglePersonHandler.bind(this, 'Darien!!')}>Switch Name</button>
-        <div>
-        <Person name={this.state.persons[0].name}
-          age={this.state.persons[0].age}> My hobbies: Video games</Person>
-        <Person
-          name={this.state.persons[1].name}
-          age={this.state.persons[1].age}
-          click={this.switchNamedHandler.bind(this, 'Darien Hernandez')}
-          changed={this.nameChangedHandler}/>
-        <Person
-          name={this.state.persons[2].name}
-          age={this.state.persons[2].age}/>
+        {
+          this.state.showPersons === true ?
+            <div>
+            <Person name={this.state.persons[0].name}
+              age={this.state.persons[0].age}> My hobbies: Video games</Person>
+            <Person
+              name={this.state.persons[1].name}
+              age={this.state.persons[1].age}
+              click={this.switchNamedHandler.bind(this, 'Darien Hernandez')}
+              changed={this.nameChangedHandler}/>
+            <Person
+              name={this.state.persons[2].name}
+              age={this.state.persons[2].age}/>
+            </div> : null
+        }
         </div>
-      </div>
     );
   }
 }
