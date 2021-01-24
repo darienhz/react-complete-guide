@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Person from './Person/Person';
-import Radium,  { StyleRoot } from 'radium'
+
 
 
 
@@ -96,7 +96,7 @@ class App extends Component {
           </div>
         );
         buttonStyle.backgroundColor = 'red';
-        style[':hover'] = {
+        buttonStyle[':hover'] = {
           backgroundColor: 'salmon',
           color: 'black'
         }
@@ -111,7 +111,6 @@ class App extends Component {
       }
 
     return (
-      <StyleRoot>
         <div className="App">
           <h1>Hi I'm a React App</h1>
           <p className={classes.join(' ')}>Learning to code with React</p>
@@ -119,12 +118,11 @@ class App extends Component {
           onClick={this.togglePersonHandler.bind(this, 'Darien!!')}>Switch Name</button>
           {persons}
         </div>
-      </StyleRoot>
     );
   }
 }
 
-export default Radium(App);
+export default App;
 
 /* <Person name={this.state.persons[0].name}
 age={this.state.persons[0].age}> My hobbies: Video games</Person>
