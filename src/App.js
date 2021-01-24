@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Person from './Person/Person';
-import Radium from 'radium'
+import Radium,  { StyleRoot } from 'radium'
 
 
 
@@ -111,13 +111,15 @@ class App extends Component {
       }
 
     return (
-      <div className="App">
-        <h1>Hi I'm a React App</h1>
-        <p className={classes.join(' ')}>Learning to code with React</p>
-        <button style={buttonStyle}
-         onClick={this.togglePersonHandler.bind(this, 'Darien!!')}>Switch Name</button>
-         {persons}
-      </div>
+      <StyleRoot>
+        <div className="App">
+          <h1>Hi I'm a React App</h1>
+          <p className={classes.join(' ')}>Learning to code with React</p>
+          <button style={buttonStyle}
+          onClick={this.togglePersonHandler.bind(this, 'Darien!!')}>Switch Name</button>
+          {persons}
+        </div>
+      </StyleRoot>
     );
   }
 }
