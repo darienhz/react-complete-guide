@@ -2,8 +2,20 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Person from './Person/Person';
+import styled from 'styled-components'
 
+const StyledButton = styled.button`
+  background-color: lightgreen;
+  font: inherit;
+  border: 2px solid lightblue;
+  padding: 8px;
+  color: white;
+  cursor: pointer;
 
+  &:hover {
+    background-color: lightblue;
+  }
+`
 
 
 class App extends Component {
@@ -68,15 +80,7 @@ class App extends Component {
   render() {
 
     const buttonStyle = {
-      backgroundColor: 'lightgreen',
-      font: 'inherit',
-      border: '2px solid lightblue',
-      padding: '8px',
-      color: 'white',
-      cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'lightblue',
-      }
+
     }
 
       let persons = null;
@@ -114,8 +118,8 @@ class App extends Component {
         <div className="App">
           <h1>Hi I'm a React App</h1>
           <p className={classes.join(' ')}>Learning to code with React</p>
-          <button style={buttonStyle}
-          onClick={this.togglePersonHandler.bind(this, 'Darien!!')}>Switch Name</button>
+          <StyledButton
+           onClick={this.togglePersonHandler.bind(this, 'Darien!!')}>Switch Name</StyledButton>
           {persons}
         </div>
     );
