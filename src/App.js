@@ -2,20 +2,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Person from './Person/Person';
-import styled from 'styled-components'
 
-const StyledButton = styled.button`
-  background-color: ${props => props.alt ? 'red' : 'green'};
-  font: inherit;
-  border: 2px solid lightblue;
-  padding: 8px;
-  color: white;
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${props => props.alt ? 'salmon' : 'lightgreen'};
-  }
-`
 
 
 class App extends Component {
