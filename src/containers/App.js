@@ -6,6 +6,12 @@ import Cockpit from '../components/Cockpit/Cockpit';
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    console.log('[App.js] constructor');
+
+  }
+
   state = {
     persons: [
       { id: 'sfs', name: 'Darien', age: 31 },
@@ -16,6 +22,10 @@ class App extends Component {
     showPersons: false
   }
 
+  static getDerivedStateFromProps(props, state) {
+    console.log('[App.js] getDerivedStateFromProps', props);
+    return state;
+  }
 //   switchNamedHandler = (newName) => {
 //    // Dont do this!! this.state.persons[0].name = 'Darien Hernandez';
 //    this.setState({
@@ -65,7 +75,7 @@ class App extends Component {
   }
 
   render() {
-
+    console.log('[App.js] render');
       let persons = null;
 
       if (this.state.showPersons) {
