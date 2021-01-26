@@ -26,16 +26,11 @@ class App extends Component {
     console.log('[App.js] getDerivedStateFromProps', props);
     return state;
   }
-//   switchNamedHandler = (newName) => {
-//    // Dont do this!! this.state.persons[0].name = 'Darien Hernandez';
-//    this.setState({
-//      persons: [
-//       { name: newName, age: 31 },
-//       { name: 'Justin Pla', age: 31 },
-//       { name: 'Joey G', age: 32 },
-//     ]
-//   })
-// }
+
+  componentDidMount() {
+    console.log('[App.js] componentDidMount');
+  }
+
 
   nameChangedHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(p => {
