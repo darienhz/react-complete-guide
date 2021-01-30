@@ -61,9 +61,9 @@ class App extends Component {
     // Dont do this!! this.state.persons[0].name = 'Darien Hernandez';
     this.setState({
       persons: [
-       { name: 'Darien', age: 31 },
        { name: event.target.value, age: 31 },
-       { name: 'Joey G', age: 32 },
+       { name: event.target.value, age: 31 },
+       { name: event.target.value, age: 32 },
      ]
    })
  }
@@ -101,7 +101,7 @@ class App extends Component {
           {this.state.showCockpit ?  <Cockpit
             title={this.props.appTitle}
             showPersons={this.state.showPersons}
-            persons={this.state.persons}
+            personsLength={this.state.persons.length}
             clicked={this.togglePersonHandler}
            /> : null }
           {persons}
