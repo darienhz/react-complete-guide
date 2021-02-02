@@ -21,7 +21,8 @@ class App extends Component {
     ],
     otherState: 'Something else!',
     showPersons: false,
-    showCockpit: true
+    showCockpit: true,
+    changeCounter: 0
   }
 
   static getDerivedStateFromProps(props, state) {
@@ -57,17 +58,24 @@ class App extends Component {
     const persons = [...this.state.persons];
     persons[personIndex] = person;
 
-    this.setState({persons: persons});
+    this.setState((prevState, props) => {
+      return {
+        persons: persons,
+        changeCounter: prevState.changeCounter + 1
+        }
+      });
+    };
+
 
     // Dont do this!! this.state.persons[0].name = 'Darien Hernandez';
-    this.setState({
-      persons: [
-       { name: event.target.value, age: 31 },
-       { name: event.target.value, age: 31 },
-       { name: event.target.value, age: 32 },
-     ]
-   })
- }
+//     this.setState({
+//       persons: [
+//        { name: event.target.value, age: 31 },
+//        { name: event.target.value, age: 31 },
+//        { name: event.target.value, age: 32 },
+//      ]
+//    })
+//  }
 
   deletePersonHandler = (personIndex) => {
     const persons = [...this.state.persons];
